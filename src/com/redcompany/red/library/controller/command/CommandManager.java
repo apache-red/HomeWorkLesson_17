@@ -10,8 +10,8 @@ public class CommandManager {
 
     public static BasicCommand defineCommand(String action){
         switch (action){
-            case "viewAll_catalog":
-            //    command = new ViewBookCatalogCommand();
+            case "viewAll_books_allCatalogs":
+                    command = new ViewAllBooksInAllCatalogs();
                 break;
             case "single_row":
       //          command = new ViewSingleCatalogRowCommand();

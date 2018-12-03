@@ -19,7 +19,7 @@ public class SimpleConsoleView {
     }
 
     private void showBasicMenu() {
-        System.out.println("1 - view books catalog");
+        System.out.println("1 - show all books in all catalogs");
         System.out.println("2 - view single catalog row");
         System.out.println("3 - find book by title");
         System.out.println("4 - add new book");
@@ -37,7 +37,7 @@ public class SimpleConsoleView {
 
         switch (menuItem) {
             case 1:
-                userInput.put("user_action", "view_catalog");
+                userInput.put("user_action", "viewAll_books_allCatalogs");
                 break;
             case 2:
                 //Scanner sc = new Scanner(System.in);
