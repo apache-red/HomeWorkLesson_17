@@ -18,4 +18,10 @@ public class ResultConsoleView {
         System.out.println(book);
     }
 
+
+//    public static void showResult(List<Book> bookList){
+//        System.out.println(bookList);
+//    }
+
+
 }

@@ -7,6 +7,7 @@ import com.redcompany.red.library.entity.Catalog;
 import com.redcompany.red.library.entity.Library;
 import com.redcompany.red.library.service.LibraryService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -37,6 +38,22 @@ public class RegularLibraryServiceImpl implements LibraryService {
         bookList = catalog.getBooks();
 
         return bookList.get(rowNumber);
+    }
+
+    @Override
+    public List<Book> findBookByNameInCatalog(Map<String, Object> userdata, LibraryCommand libraryCommand) {
+        List<Book> foundBooksList = new ArrayList<>();
+        String findBookTitle = (String)userdata.get("book_title");
+        catalogList = getCatalogListFromLibrary(libraryCommand);
+        for (int i = 0; i <catalogList.size() ; i++) {
+            catalog = catalogList.get(i);
+            for (int j = 0; j < catalog.getBooks().size(); j++) {
+                if (catalog.getBooks().get(j).getTitle().equals(findBookTitle)) {
+                    foundBooksList.add(catalog.getBooks().get(j));
+                }
+            }
+        }
+        return foundBooksList;
     }
 
 

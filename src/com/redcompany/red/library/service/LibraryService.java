@@ -17,4 +17,6 @@ public interface LibraryService {
 
     Book getBookFromCatalog(Map<String, Object> userdata, LibraryCommand libraryCommand);
 
+    List<Book> findBookByNameInCatalog(Map<String, Object> userdata, LibraryCommand libraryCommand);
+
 }

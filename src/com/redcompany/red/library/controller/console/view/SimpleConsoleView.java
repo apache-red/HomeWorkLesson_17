@@ -32,15 +32,15 @@ public class SimpleConsoleView {
 
         return userInput;
     }
-
+    // далее нужна проверка на наличие такой строки и каталога !!!!!!!!!!
     private void getInputData(int menuItem) {
         int number =0;
+        String name;
         switch (menuItem) {
             case 1:
                 userInput.put("user_action", "viewAll_books_allCatalogs");
                 break;
             case 2:
-                // далее нужна проверка на наличие такой строки и каталога
                 System.out.println("Enter catalog number");
                 number = readMenuItem();
                 userInput.put("user_action", "single_row");
@@ -51,7 +51,9 @@ public class SimpleConsoleView {
                 break;
             case 3:
                 userInput.put("user_action", "find_book");
-                userInput.put("book_title", 1);
+                System.out.println("Enter the name of the book you want to find (Book1, Book2...)");
+                name = readMenuItemString();
+                userInput.put("book_title", name);
                 break;
             case 4:
                 userInput.put("user_action", "add_book");
@@ -74,6 +76,13 @@ public class SimpleConsoleView {
             readMenuItem();
         }
         return number;
+    }
+
+    private String readMenuItemString() {
+        System.out.print("Input field: ");
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        return str;
     }
 
 

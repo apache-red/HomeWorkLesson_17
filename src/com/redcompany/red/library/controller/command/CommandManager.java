@@ -17,7 +17,7 @@ public class CommandManager {
                 command = new ViewSingleCatalogRowCommand();
                 break;
             case "find_book":
-        //        command = new ViewBookFindByTitleCommand();
+                command = new ViewBookFindByTitleCommand();
                 break;
             case "add_book":
         //        command = new AddNewBookToCatalogCommand();
