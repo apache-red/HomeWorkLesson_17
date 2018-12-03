@@ -34,16 +34,20 @@ public class SimpleConsoleView {
     }
 
     private void getInputData(int menuItem) {
-
+        int number =0;
         switch (menuItem) {
             case 1:
                 userInput.put("user_action", "viewAll_books_allCatalogs");
                 break;
             case 2:
-                //Scanner sc = new Scanner(System.in);
-                // get row number from console
+                // далее нужна проверка на наличие такой строки и каталога
+                System.out.println("Enter catalog number");
+                number = readMenuItem();
                 userInput.put("user_action", "single_row");
-                userInput.put("row_number", 2);
+                userInput.put("catalog_number", number);
+                System.out.println("Enter row number");
+                number = readMenuItem();
+                userInput.put("row_number", number);
                 break;
             case 3:
                 userInput.put("user_action", "find_book");

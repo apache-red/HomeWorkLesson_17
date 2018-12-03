@@ -36,7 +36,7 @@ public class MainConsoleController {
         BasicCommand command = defineCommand(convertString(userAction));
 
         // полиморфически вызывается метод на указанной библиотеке
-        command.performAction(libraryData);
+        command.performAction(userdata , libraryData);
 
 
     }

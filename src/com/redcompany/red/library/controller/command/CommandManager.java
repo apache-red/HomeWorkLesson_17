@@ -14,7 +14,7 @@ public class CommandManager {
                     command = new ViewAllBooksInAllCatalogs();
                 break;
             case "single_row":
-      //          command = new ViewSingleCatalogRowCommand();
+                command = new ViewSingleCatalogRowCommand();
                 break;
             case "find_book":
         //        command = new ViewBookFindByTitleCommand();

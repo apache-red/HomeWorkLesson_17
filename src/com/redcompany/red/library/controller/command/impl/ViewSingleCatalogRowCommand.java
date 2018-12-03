@@ -3,25 +3,24 @@ package com.redcompany.red.library.controller.command.impl;
 import com.redcompany.red.library.controller.command.BasicCommand;
 import com.redcompany.red.library.controller.console.view.ResultConsoleView;
 import com.redcompany.red.library.data.LibraryCommand;
-import com.redcompany.red.library.entity.Catalog;
+import com.redcompany.red.library.entity.Book;
 import com.redcompany.red.library.service.LibraryService;
 import com.redcompany.red.library.service.impl.RegularLibraryServiceImpl;
 
-import java.util.List;
 import java.util.Map;
 
-public class ViewAllBooksInAllCatalogs implements BasicCommand {
+public class ViewSingleCatalogRowCommand implements BasicCommand {
 
-    private   LibraryService libraryService;
-    private List<Catalog> catalogList;
+    private LibraryService libraryService;
+    private Book book;
 
     @Override
     public void performAction(Map<String, Object> userdata, LibraryCommand libraryCommand) {
 
         libraryService = new RegularLibraryServiceImpl();
-        catalogList = libraryService.getCatalogListFromLibrary(libraryCommand);
 
-        ResultConsoleView.showResult(catalogList);
+        book = libraryService.getBookFromCatalog(userdata, libraryCommand);
+        ResultConsoleView.showResult(book);
 
     }
 }
