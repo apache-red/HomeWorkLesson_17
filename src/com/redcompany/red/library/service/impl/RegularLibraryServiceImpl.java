@@ -57,19 +57,20 @@ public class RegularLibraryServiceImpl implements LibraryService {
         String whichCatalog = (String) userdata.get("which_catalog");
         String titleNewBook = (String) userdata.get("book_title");
         catalogList = getCatalogListFromLibrary(libraryCommand);
-
         libraryCommand.addNewBook(whichCatalog, titleNewBook);
+    }
 
-//        for (int i = 0; i < catalogList.size() ; i++) {
-//            catalog = catalogList.get(i);
-//            if (catalog.getResponsiblePerson().equals(whichCatalog)){
-//               libraryCommand.addNewBook(whichCatalog, titleNewBook);
-//            }
-//
-//        }
-//
-//
-//        System.out.println();
+    @Override
+    public List<Book> findBookByAuthorInCatalog(Map<String, Object> userdata, LibraryCommand libraryCommand) {
+        String findauthorName = (String) userdata.get("find_author");
+        catalogList = getCatalogListFromLibrary(libraryCommand);
+        for (int i = 0; i <catalogList.size() ; i++) {
+            catalog = catalogList.get(i);
+            if (catalog.getResponsiblePerson().equals(findauthorName)){
+                return bookList = catalog.getBooks();
+            }
+        }
+        return null;
     }
 
 

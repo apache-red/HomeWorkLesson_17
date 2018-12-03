@@ -5,4 +5,4 @@ Lesson 17 - Добавить Library в качестве "БД". Реализо�
  Решение - репозиторий HomeWorkLesson_17.
  
 //test picture
-![Image alt](https://github.com/apache-red/HomeWorkLesson_16/raw/master/ShowTask.png)
+![Image alt](https://github.com/apache-red/HomeWorkLesson_17/raw/master/ShowTask.png)

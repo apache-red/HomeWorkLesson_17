@@ -22,8 +22,8 @@ public class CommandManager {
             case "add_book":
                 command = new AddNewBookToCatalogCommand();
                 break;
-            case "test_test":
-        //        command = new ViewBookLibraryCommand();
+            case "find_books_by_author":
+                command = new FindBookByAuthor();
                 break;
         }
         return command;

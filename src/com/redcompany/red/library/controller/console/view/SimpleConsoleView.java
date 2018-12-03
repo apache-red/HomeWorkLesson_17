@@ -23,7 +23,8 @@ public class SimpleConsoleView {
         System.out.println("2 - view single catalog row");
         System.out.println("3 - find book by title");
         System.out.println("4 - add new book");
-        System.out.println("0 - test");
+        System.out.println("5 - find book by author");
+        System.out.println("0 - Exit");
     }
 
     public Map<String, Object> readUserInput() {
@@ -64,8 +65,14 @@ public class SimpleConsoleView {
                 name = readMenuItemString();
                 userInput.put("book_title", name);
                 break;
+            case 5:
+                userInput.put("user_action", "find_books_by_author");
+                System.out.println("Enter author(catalog) name (Ivan Ivanov...)");
+                name = readMenuItemString();
+                userInput.put("find_author", name);
+                break;
             case 0:
-                userInput.put("user_action", "test_test");
+                System.exit(0);
                 break;
         }
 
