@@ -20,7 +20,7 @@ public class CommandManager {
                 command = new ViewBookFindByTitleCommand();
                 break;
             case "add_book":
-        //        command = new AddNewBookToCatalogCommand();
+                command = new AddNewBookToCatalogCommand();
                 break;
             case "test_test":
         //        command = new ViewBookLibraryCommand();

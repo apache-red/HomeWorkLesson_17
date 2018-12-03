@@ -1,12 +1,10 @@
 package com.redcompany.red.library.service.impl;
 
-
 import com.redcompany.red.library.data.LibraryCommand;
 import com.redcompany.red.library.entity.Book;
 import com.redcompany.red.library.entity.Catalog;
 import com.redcompany.red.library.entity.Library;
 import com.redcompany.red.library.service.LibraryService;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +14,6 @@ public class RegularLibraryServiceImpl implements LibraryService {
     private LibraryCommand libraryCommand;
     private Library library;
     private Catalog catalog;
-
     private List<Catalog> catalogList;
     private List<Book> bookList;
 
@@ -36,7 +33,6 @@ public class RegularLibraryServiceImpl implements LibraryService {
         catalogList = getCatalogListFromLibrary(libraryCommand);
         catalog = catalogList.get(catalogNumber);
         bookList = catalog.getBooks();
-
         return bookList.get(rowNumber);
     }
 
@@ -54,6 +50,26 @@ public class RegularLibraryServiceImpl implements LibraryService {
             }
         }
         return foundBooksList;
+    }
+
+    @Override
+    public void addNewBookToCatalog(Map<String, Object> userdata, LibraryCommand libraryCommand) {
+        String whichCatalog = (String) userdata.get("which_catalog");
+        String titleNewBook = (String) userdata.get("book_title");
+        catalogList = getCatalogListFromLibrary(libraryCommand);
+
+        libraryCommand.addNewBook(whichCatalog, titleNewBook);
+
+//        for (int i = 0; i < catalogList.size() ; i++) {
+//            catalog = catalogList.get(i);
+//            if (catalog.getResponsiblePerson().equals(whichCatalog)){
+//               libraryCommand.addNewBook(whichCatalog, titleNewBook);
+//            }
+//
+//        }
+//
+//
+//        System.out.println();
     }
 
 

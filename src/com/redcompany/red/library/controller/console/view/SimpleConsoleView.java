@@ -57,6 +57,12 @@ public class SimpleConsoleView {
                 break;
             case 4:
                 userInput.put("user_action", "add_book");
+                System.out.println("Enter in which catalog add book (Ivan Ivanov...)");
+                name = readMenuItemString();
+                userInput.put("which_catalog", name);
+                System.out.println("Enter title of the book");
+                name = readMenuItemString();
+                userInput.put("book_title", name);
                 break;
             case 0:
                 userInput.put("user_action", "test_test");

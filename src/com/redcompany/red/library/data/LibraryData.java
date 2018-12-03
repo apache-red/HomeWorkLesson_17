@@ -15,7 +15,11 @@ public class LibraryData implements LibraryCommand {
     private Library library;
     private Catalog catalog;
 
+
     private List<Catalog> catalogList;
+    private List<Book> bookList;
+
+    private int idBook;
 
 
     public LibraryData() {
@@ -26,6 +30,19 @@ public class LibraryData implements LibraryCommand {
     @Override
     public Library getLibrary() {
         return library;
+    }
+
+    @Override
+    public void addNewBook(String whichCatalog , String title) {
+
+        for (int i = 0; i < catalogList.size() ; i++) {
+            catalog = catalogList.get(i);
+            if (catalog.getResponsiblePerson().equals(whichCatalog)){
+                catalog.addBookToCatalog(new Book(++idBook , title));
+            }
+
+        }
+        System.out.println();
     }
 
 
@@ -56,11 +73,11 @@ public class LibraryData implements LibraryCommand {
 
     private List<Book> ininBookList() {
         List<Book> bookList = new ArrayList<Book>();
-        bookList.add(new Book(1, "Book1"));
-        bookList.add(new Book(2, "Book2"));
-        bookList.add(new Book(3, "Book3"));
-        bookList.add(new Book(4, "Book4"));
-        bookList.add(new Book(5, "Book5"));
+        bookList.add(new Book(++idBook, "Book1"));
+        bookList.add(new Book(++idBook, "Book2"));
+        bookList.add(new Book(++idBook, "Book3"));
+        bookList.add(new Book(++idBook, "Book4"));
+        bookList.add(new Book(++idBook, "Book5"));
         return bookList;
     }
 

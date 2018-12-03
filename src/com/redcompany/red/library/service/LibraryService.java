@@ -19,4 +19,6 @@ public interface LibraryService {
 
     List<Book> findBookByNameInCatalog(Map<String, Object> userdata, LibraryCommand libraryCommand);
 
+    void addNewBookToCatalog(Map<String, Object> userdata, LibraryCommand libraryCommand);
+
 }

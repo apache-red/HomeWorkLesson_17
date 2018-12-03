@@ -15,29 +15,30 @@ public class MainConsoleController {
 
     public static void main(String[] args) {
 
-
         // создаю БД библиотек
         LibraryCommand libraryData = new LibraryData();
 
-        //создаем консоль
-        SimpleConsoleView consoleView = new SimpleConsoleView();
+       while (true) {
+           //создаем консоль
+           SimpleConsoleView consoleView = new SimpleConsoleView();
 
-        // запускаем
-        consoleView.startConsoleView();
+           // запускаем
+           consoleView.startConsoleView();
 
-        // получаем сформированный запрос от пользователя в виде Map
-        Map<String, Object> userdata = consoleView.readUserInput();
+           // получаем сформированный запрос от пользователя в виде Map
+           Map<String, Object> userdata = consoleView.readUserInput();
 
-        // Получаем запрос из Map и записываем его в userAction
-        Object userAction = userdata.get("user_action");
+           // Получаем запрос из Map и записываем его в userAction
+           Object userAction = userdata.get("user_action");
 
-        // парсим команду и оправляем ее в контроллер обратно получаем модифицированную
-        // команду в зависимости от запроса
-        BasicCommand command = defineCommand(convertString(userAction));
+           // парсим команду и оправляем ее в контроллер обратно получаем модифицированную
+           // команду в зависимости от запроса
+           BasicCommand command = defineCommand(convertString(userAction));
 
-        // полиморфически вызывается метод на указанной библиотеке + передаем доп параметры
-        command.performAction(userdata , libraryData);
-
+           // полиморфически вызывается метод на указанной библиотеке + передаем доп параметры
+           command.performAction(userdata, libraryData);
+           System.out.println();
+       }
 
     }
 

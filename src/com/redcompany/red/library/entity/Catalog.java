@@ -32,6 +32,9 @@ public class Catalog {
         return books;
     }
 
+    public void addBookToCatalog(Book book) {
+        books.add(book);
+    }
     public void setBooks(List<Book> books) {
         this.books = books;
     }
