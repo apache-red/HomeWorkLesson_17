@@ -11,8 +11,6 @@ import java.util.Map;
 public interface LibraryService {
 
 
-//    LibraryData getLibrary();
-
     List<Catalog> getCatalogListFromLibrary(LibraryCommand libraryCommand);
 
     Book getBookFromCatalog(Map<String, Object> userdata, LibraryCommand libraryCommand);
